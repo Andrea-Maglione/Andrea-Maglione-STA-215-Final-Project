@@ -1,4 +1,7 @@
-,Mean,SD,Min,Max,Description
-Total Penalities,5.41,0.92,3.4,7.11,Average number of yards gained per offensive play (Quantitative Variable 1).
-Rushing First Downs,20.19,4.78,10,34,Total number of first downs earned by a team in a game (Quantitative Variable 2).
-n = 64,,,,,
+## Descriptive Statistics
+
+| Variable               | Mean | SD   | Min  | Max   | Description |
+|-----------------------|------|------|------|-------|-------------|
+| Total Penalties       | 5.41 | 0.92 | 3.40 | 7.11  | Average number of yards gained per offensive play. |
+| Rushing First Downs   | 20.19| 4.78 | 10.00| 34.00 | Total number of first downs earned by a team in a game. |
+
