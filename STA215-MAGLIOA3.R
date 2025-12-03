@@ -59,3 +59,21 @@ cor.test(dataset$Yards_per_play, dataset$Total_First_Downs)
 model <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
 summary(model)
 
+##################################################################################
+####################  Figure 3: Residual Plot                ####################   
+##################################################################################
+
+# Run the linear regression model
+linear_relationship <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
+
+# Plot the residuals against Yards per Play
+plot(dataset$Yards_per_play,
+     residuals(linear_relationship),
+     main = "Residual Plot",
+     xlab = "Yards per Play",
+     ylab = "Residuals")
+
+# Add horizontal line at zero
+abline(h = 0, col = "red")
+
+
