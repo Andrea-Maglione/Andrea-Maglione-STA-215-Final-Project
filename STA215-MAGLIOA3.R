@@ -12,7 +12,7 @@ dataset <- read_csv("data.csv")
 View(dataset)
 
 ##################################################################################
-############### Table 1: descriptive statistics    ####################   
+############### Table 1: Descriptive Statistics    ####################   
 ##################################################################################
 mean(dataset$Yards_per_play)
 sd(dataset$Yards_per_play)
@@ -23,7 +23,7 @@ sd(dataset$Total_First_Downs)
 summary(dataset$Total_First_Downs)
 
 ##################################################################################
-####################   Figure 2: scatter plot             ####################   
+####################   Figure 1: Scatter Plot             ####################   
 ##################################################################################
 
 # Scatterplot: Yards Per Play vs Total First Downs
@@ -41,7 +41,7 @@ abline(h = meanx, col = "black")   # horizontal mean line
 abline(v = meany, col = "black")   # vertical mean line
 
 ##################################################################################
-############### Test 1: Linear regression  ####################   
+############### Figure 2: Linear regression  ####################   
 ##################################################################################
 linear_relationship <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
 summary(linear_relationship)
@@ -51,7 +51,7 @@ abline(linear_relationship, col = "red")
 
 
 ##################################################################################
-############### Test 2:Correlation Test ####################   
+############### Figure 3:Correlation Test ####################   
 ##################################################################################
 cor.test(dataset$Yards_per_play, dataset$Total_First_Downs)
 
@@ -60,7 +60,7 @@ model <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
 summary(model)
 
 ##################################################################################
-####################  Figure 3: Residual Plot                ####################   
+####################  Figure 4: Residual Plot                ####################   
 ##################################################################################
 
 # Run the linear regression model
