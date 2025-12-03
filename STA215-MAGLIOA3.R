@@ -41,14 +41,19 @@ meanx <- mean(dataset$Total_First_Downs)
 abline(h = meanx, col = "black")   # horizontal mean line
 abline(v = meany, col = "black")   # vertical mean line
 
-# Linear regression
+##################################################################################
+############### Test 1: Linear regression  ####################   
+##################################################################################
 linear_relationship <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
 summary(linear_relationship)
 
 # Add regression line
 abline(linear_relationship, col = "red")
 
-#Correlation Test 
+
+##################################################################################
+############### Test 2:Correlation Test ####################   
+##################################################################################
 cor.test(dataset$Yards_per_play, dataset$Total_First_Downs)
 
 #Linear Regression 
