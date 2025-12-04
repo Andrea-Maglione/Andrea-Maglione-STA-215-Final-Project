@@ -1,7 +1,7 @@
 ## Project: STA 145, Fall 2025, Final Project 
 ## Who: Andrea Maglione
 
-##Load packages
+# Load packages
 library(readr)
 library(dplyr)
 library(ggplot2)
@@ -12,68 +12,61 @@ dataset <- read_csv("data.csv")
 View(dataset)
 
 ##################################################################################
-############### Table 1: Descriptive Statistics    ####################   
+############### Table 1: Descriptive Statistics ####################   
 ##################################################################################
+
+# Yards Per Play
 mean(dataset$Yards_per_play)
 sd(dataset$Yards_per_play)
-summary(data$Yards_per_play)
+summary(dataset$Yards_per_play)
 
+# Total First Downs
 mean(dataset$Total_First_Downs)
 sd(dataset$Total_First_Downs)
 summary(dataset$Total_First_Downs)
 
 ##################################################################################
-####################   Figure 1: Scatter Plot             ####################   
+#################### Figure 1: Scatter Plot ####################   
 ##################################################################################
 
 # Scatterplot: Yards Per Play vs Total First Downs
-linear_plot <- plot(dataset$Yards_per_play,
-                    dataset$Total_First_Downs,
-                    xlab = "Yards Per Play",
-                    ylab = "Total First Downs",
-                    main = "Yards Per Play vs Total First Downs")
+plot(dataset$Yards_per_play,
+     dataset$Total_First_Downs,
+     xlab = "Yards Per Play",
+     ylab = "Total First Downs",
+     main = "Yards Per Play vs Total First Downs")
 
 # Add mean lines
-meany <- mean(dataset$Yards_per_play)
-meanx <- mean(dataset$Total_First_Downs)
+mean_x <- mean(dataset$Yards_per_play)
+mean_y <- mean(dataset$Total_First_Downs)
 
-abline(h = meanx, col = "black")   # horizontal mean line
-abline(v = meany, col = "black")   # vertical mean line
-
-##################################################################################
-############### Figure 2: Linear regression  ####################   
-##################################################################################
-linear_relationship <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
-summary(linear_relationship)
-
-# Add regression line
-abline(linear_relationship, col = "red")
-
+abline(h = mean_y, col = "black")   # horizontal
+abline(v = mean_x, col = "black")   # vertical
 
 ##################################################################################
-############### Figure 3:Correlation Test ####################   
+############### Figure 2: Linear Regression ####################   
 ##################################################################################
-cor.test(dataset$Yards_per_play, dataset$Total_First_Downs)
 
-#Linear Regression 
 model <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
 summary(model)
 
+# Add regression line
+abline(model, col = "red")
+
 ##################################################################################
-####################  Figure 4: Residual Plot                ####################   
+############### Statistical Test: Correlation ####################   
 ##################################################################################
 
-# Run the linear regression model
-linear_relationship <- lm(Total_First_Downs ~ Yards_per_play, data = dataset)
+cor.test(dataset$Yards_per_play, dataset$Total_First_Downs)
 
-# Plot the residuals against Yards per Play
+##################################################################################
+############### Figure 3: Residual Plot ####################   
+##################################################################################
+
 plot(dataset$Yards_per_play,
-     residuals(linear_relationship),
+     residuals(model),
      main = "Residual Plot",
-     xlab = "Yards per Play",
+     xlab = "Yards Per Play",
      ylab = "Residuals")
 
-# Add horizontal line at zero
 abline(h = 0, col = "red")
-
-
