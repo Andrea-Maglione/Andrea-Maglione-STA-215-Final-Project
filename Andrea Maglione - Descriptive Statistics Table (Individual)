@@ -3,5 +3,5 @@
 | Variable              | Mean | SD   | Min  | Max   | Description |
 |-----------------------|------|------|------|-------|-------------|
 | Total Yards per Play  | 5.41 | 0.92 | 3.40 | 7.11  | Average number of yards gained per offensive play.      |
-| Rushing First Downs   | 20.19| 4.78 | 10.00| 34.00 | Total number of first downs earned by a team in a game. |
+| Total First Downs     | 20.19| 4.78 | 10.00| 34.00 | Total number of first downs earned by a team in a game. |
 
