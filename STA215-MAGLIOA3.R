@@ -1,5 +1,6 @@
 ## Project: STA 145, Fall 2025, Final Project 
 ## Who: Andrea Maglione
+## Date: 2025_12_12
 
 # Load packages
 library(readr)
